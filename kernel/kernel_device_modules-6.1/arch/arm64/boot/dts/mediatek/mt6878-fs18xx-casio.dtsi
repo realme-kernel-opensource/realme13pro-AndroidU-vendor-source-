@@ -1,0 +1,22 @@
+&i2c9 {
+    #address-cells = <1>;
+    #size-cells = <0>;
+    clock-frequency = <400000>;
+    mediatek,use-open-drain;
+
+    fs18xx@34 {
+        compatible = "foursemi,fs18xx";
+        reg = <0x34>;
+        fsm,rst-gpio = <&pio 149 0>; // according to schematic diagram
+        fsm,channel-num =/bits/ 16 <1>;
+        status = "okay";
+    };
+
+    fs18xx@35 {
+        compatible = "foursemi,fs18xx";
+        reg = <0x35>;
+        fsm,rst-gpio = <&pio 152 0>; // according to schematic diagram
+        fsm,channel-num =/bits/ 16 <0>;
+        status = "okay";
+    };
+};
